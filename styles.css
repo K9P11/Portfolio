@@ -1,0 +1,881 @@
+/* ============================ Variables de Colores ============================ */
+:root {
+    /* Oscuros */
+    --dcolor-background-primary: #0F172A;
+    --dcolor-background-secondary: #272E3F;
+    --dcolor-background-tertiary: #1B2A40;
+    --dcolor-background-light: #FFFFFF;
+    --dcolor-background-dark: #000000;
+    --dcolor-background-glass: rgba(160, 174, 192, 0.04);
+
+    --dcolor-texto-primary: #C6CED9;
+    --dcolor-texto-secondary: #A0AEC0;
+    --dcolor-texto-tertiary: #7678ED;
+    --dcolor-texto-quaternary: #C2C3FF;
+    --dcolor-texto-fifth: #62C2BD;
+    --dcolor-texto-light: #FFFFFF;
+    --dcolor-texto-dark: #000000;
+
+    --dcolor-title-primary: #7678ED;
+    --dcolor-title-secondary: #476187;
+    --dcolor-scroll: #5859b3;
+
+    /* Claros */
+    --lcolor-background-primary: #FFFFFF;
+    --lcolor-background-secondary: #F5F6F8;
+    --lcolor-background-tertiary: #E3F2FD; /**/
+    --lcolor-background-light: #FFFFFF;
+    --lcolor-background-dark: #D1D5DB;
+    --lcolor-background-glass: rgba(87, 94, 104, 0.04);
+
+    --lcolor-texto-primary: #0F172A;
+    --lcolor-texto-secondary: #334155;
+    --lcolor-texto-tertiary: #1854d8;
+    --lcolor-texto-quaternary: #477ef4;
+    --lcolor-texto-fifth: #1E40AF;/**/
+    --lcolor-texto-light: #1E293B;
+    --lcolor-texto-dark: #FFFFFF;
+
+    --lcolor-title-primary: #2563EB;
+    --lcolor-title-secondary: #b4c6ff;
+    --lcolor-scroll: #2563EB;
+}
+
+
+
+/* Tema oscuro */ 
+.dark-theme { 
+    --color-background-primary: var(--dcolor-background-primary); 
+    --color-background-secondary: var(--dcolor-background-secondary); 
+    --color-background-tertiary: var(--dcolor-background-tertiary); 
+    --color-background-light: var(--dcolor-background-light); 
+    --color-background-dark: var(--dcolor-background-dark); 
+    --color-texto-primary: var(--dcolor-texto-primary); 
+    --color-texto-secondary: var(--dcolor-texto-secondary); 
+    --color-texto-tertiary: var(--dcolor-texto-tertiary); 
+    --color-texto-quaternary: var(--dcolor-texto-quaternary); 
+    --color-texto-fifth: var(--dcolor-texto-fifth); 
+    --color-texto-light: var(--dcolor-texto-light); 
+    --color-texto-dark: var(--dcolor-texto-dark); 
+    --color-background-glass: var(--dcolor-background-glass);
+    --color-title-primary: var(--dcolor-title-primary);
+    --color-title-secondary: var(--dcolor-title-secondary);
+    --color-scroll: var(--dcolor-scroll);
+} 
+/* Tema claro */ 
+.light-theme { 
+    --color-background-primary: var(--lcolor-background-primary); 
+    --color-background-secondary: var(--lcolor-background-secondary); 
+    --color-background-tertiary: var(--lcolor-background-tertiary); 
+    --color-background-light: var(--lcolor-background-light);
+    --color-background-dark: var(--lcolor-background-dark); 
+    --color-texto-primary: var(--lcolor-texto-primary); 
+    --color-texto-secondary: var(--lcolor-texto-secondary); 
+    --color-texto-tertiary: var(--lcolor-texto-tertiary); 
+    --color-texto-quaternary: var(--lcolor-texto-quaternary); 
+    --color-texto-fifth: var(--lcolor-texto-fifth); 
+    --color-texto-light: var(--lcolor-texto-light); 
+    --color-texto-dark: var(--lcolor-texto-dark);
+    --color-background-glass: var(--lcolor-background-glass);    
+    --color-title-primary: var(--lcolor-title-primary);
+    --color-title-secondary: var(--lcolor-title-secondary);
+    --color-scroll: var(--lcolor-scroll);
+}
+
+/* Añadir transición suave para cambiar colores */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+@media (min-width: 1024px) {
+    /* Contenedor del scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px; 
+        height: 12px; 
+        
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--color-background-tertiary); 
+        border-radius: 10px; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-scroll) ; 
+        border-radius: 10px; 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-texto-tertiary);
+    }
+    ::-webkit-scrollbar-button {
+        display: none; 
+    }
+}
+
+
+  
+
+/* ============================ Estilos generales ============================ */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-primary);
+    color: var(--color-texto-primary);
+    
+}
+
+
+.container {
+    display: flex;
+    height: fit-content;
+    width: 100vw;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+/* ============================ Estilos de las Chips ============================ */
+.badges { 
+    margin-top: 10px;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px;
+} 
+.badge { 
+    background-color: var(--color-background-tertiary) ; 
+    color: var(--color-texto-fifth) ; 
+    padding: 5px 10px; border-radius: 12px; 
+}
+
+
+/* ============================ Panel Izquierdo ============================ */
+.left-panel {
+    width: 40%;
+    height: calc(100% - var(--sticky-menu-height, 0px)); 
+    overflow-y: hidden; 
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-background-primary);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+}
+.left-panel  * {
+    max-width: 100%;  
+    margin: 0;  
+    overflow: hidden; 
+}
+
+
+/* ============================ Perfil ============================ */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    gap: 0px
+}
+.profile h1 {
+    font-size: 2em;
+    margin-top: -10%;
+    padding-bottom: 10px;
+    font-weight: 700;  
+}
+.profile h2 {
+    font-size: .8em;
+    font-weight: 300; 
+    text-transform: uppercase;
+}
+.cuerpoImagen {
+    position: relative;
+    width:25em; 
+    aspect-ratio: 1 / 1;
+}
+.imagenAlfredo, .iconTool, .imagenFoco, .circle-good {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+.imagenAlfredo img, 
+.imagenFoco img,
+.iconTool svg,
+.circle-good svg {
+    width: 90%;
+    height: 90%;
+}
+
+.circle-rect { 
+    fill: var(--color-texto-light); 
+    fill-opacity: 10%; 
+} 
+
+.svg-color path {
+    fill: var(--color-texto-light);
+}
+.iconTool svg,
+.imagenFoco img {
+    animation: float-icon 2s infinite; /* Aplica la animación */
+}
+/* Animación */
+@keyframes float-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+
+
+
+/* ============================ Panel Derecho ============================ */
+.right-panel {
+    width: 60%; 
+    height: calc(100% - var(--sticky-menu-height, 0px)); 
+    margin-left: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed; 
+    bottom: 0;
+    right: 0;    
+    overflow-y: auto
+}
+
+/* ============================ Estilos de las Secciones ============================ */
+section {
+    margin-bottom: 20px;
+}
+
+
+/* ============================ Estilos del Menu ============================ */
+* {
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+}
+#canvas-container {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+}
+#canvas-container p {
+    margin: 0; 
+    font-size: 16px; 
+    color: var(--color-texto-light); 
+}
+#canvas {
+    width:80px;
+    height: auto;
+    cursor: pointer;
+}
+.profile_list { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    margin-left: 0;
+    margin-top: 0;
+}
+nav ul {
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    display: flex; 
+    gap: 40px; 
+    align-items: center;
+}
+
+nav ul li {
+    position: relative; 
+}
+
+nav ul li a {
+    color: var(--color-texto-primary);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 0;
+    display: flex; 
+    align-items: center;
+}
+
+nav ul li a i {
+    font-size: 0.8em; 
+    margin-right: 12px; 
+    
+}
+
+nav ul li a:hover {
+    color: var(--color-texto-quaternary); 
+}
+
+nav ul li a.active {
+    color: var(--color-texto-tertiary); 
+}
+
+/* Línea debajo de la opción seleccionada */
+nav ul li a.active::after {
+    content: ''; 
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-texto-tertiary); 
+    border-radius: 4px;
+}
+
+/* Estilos del menú sticky */
+.sticky-menu {
+    position: sticky; 
+    top: 0; 
+    background-color: var(--color-background-primary); 
+    z-index: 100;
+    width: 100%;
+    padding: 10px 20px; 
+    box-shadow: 0 1px 4px var(--color-background-secondary); 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: nowrap; 
+    height: fit-content;
+    overflow:hidden;
+    box-sizing: border-box;    
+}
+
+
+/* Ícono flotante para mobile */
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-background-secondary);
+    border-radius: 50%;
+    z-index: 110;
+    cursor: pointer;
+    
+}
+
+.menu-icon i {
+    font-size: 1.5em;
+    color: var(--color-texto-primary);
+    transform: translate(70%, 50%);     
+}
+
+
+/* Menú móvil  */
+.mobile-menu {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-primary);
+    z-index: 100;
+    padding-top: 80px; 
+    transition: transform 0.3s ease-in-out; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    text-align: center; 
+}
+
+
+.mobile-menu ul li {
+    margin: 25px 0; 
+}
+
+.mobile-menu ul li a {
+    font-size: 1.2em; 
+    color: var(--color-texto-primary); 
+    text-decoration: none; 
+    font-weight: 600; 
+    padding: 12px 20px; 
+    transition: color 0.3s ease, background-color 0.3s ease; 
+    border-radius: 8px; 
+    width: 100%; 
+}
+.mobile-menu ul li a:hover {
+    color: var(--color-texto-quaternary); 
+    background-color: var(--color-background-secondary); 
+}
+/* Opción activa */
+.mobile-menu ul li a.active {
+    color: var(--color-texto-tertiary); 
+    font-weight: 700; 
+    background-color: var(--color-background-secondary); 
+}
+
+/* Efecto de transición para las opciones activas */
+.mobile-menu ul li a.active:hover {
+    background-color: var(--color-background-tertiary); 
+}
+
+/* Mostrar el ícono flotante solo en mobile */
+@media (max-width: 768px) {
+    .sticky-menu {
+        display: none; 
+    }
+
+    .menu-icon {
+        display: block; 
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .mobile-menu.show {
+        display: block; 
+    }
+
+    /* Ajustes en el menú */
+    .sticky-menu ul {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        overflow:hidden;
+    }
+
+    .sticky-menu ul li a {
+        font-size: 1.2em; 
+        overflow:hidden;
+    }
+
+    .sticky-menu {
+        position: fixed; 
+        top: 0; 
+        width: 100%; 
+        z-index: 100;
+        padding: 10px;
+        overflow:hidden;
+    }
+}
+
+
+
+
+/* ============================ Estilos de los About ============================ */
+.aboutm {
+    padding: 20px;
+}
+.aboutm h1{
+    color: var(--color-texto-primary);
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.aboutm p:not(.abo-text){ 
+    margin-bottom: 20px;
+    line-height: 1.6; 
+    color: var(--color-texto-secondary);
+}
+.aboutm p:last-child {
+    margin-bottom: 0;
+}
+.aboutm b {
+    font-weight: bold;  
+    color:var(--color-texto-primary); 
+}
+
+
+
+
+/* ============================ Estilos para la Sección de Experiencia ============================ */
+.abo-line, .experience-line, .certifications-line {
+    width: 100%;
+    height: 2px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, var(--color-title-primary) 50%, var(--color-title-secondary) 50%);
+    margin-top: 10px;
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 1s;
+}
+
+.abo-text, .experience-text, .certifications-text {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, var(--color-title-primary) 50%, var(--color-title-secondary) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 1s;
+}
+
+.abo-text{
+    margin-top: 0px;
+}
+.experience-text, .certifications-text{
+    padding-top: 20px;
+}
+
+.experience-text, .certifications-text, .experience-line, .certifications-line {
+   margin-left: 20px;
+}
+.abo-line, .experience-line{
+    margin-bottom: 20px;
+}
+
+
+
+/* Estilo cuando una sección está activa (en la vista del usuario) */
+.active-section .abo-text,
+.active-section .experience-text,
+.active-section .certifications-text {
+    background-position: left bottom;
+}
+
+.active-section .abo-line,
+.active-section .experience-line,
+.active-section .certifications-line {
+    background-position: left bottom;
+}
+
+
+.project-container {
+    display: block; 
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.project-container:hover {
+    background-color: var(--color-background-glass);
+}
+
+.project-container:hover img {
+    color: var(--color-texto-fifth);
+    font-size: 1.3em;
+}
+.project-container:hover .project-header span{ 
+    color: var(--color-texto-fifth);
+}
+
+.project-container:hover .project-header svg{ 
+    fill: var(--color-texto-fifth);
+    padding-left: 5px;
+    padding-bottom: 5px;
+    width: 20px; 
+    height: 20px;
+
+}
+
+
+.project-header {
+    display: flex;
+    gap: 8px;
+    align-items:center;
+    overflow: visible;
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: bold;  
+    color:var(--color-texto-light); 
+    text-transform: uppercase;
+}
+
+.proyect-icon {
+    width: 20px; 
+    height: 15px;
+    fill: var(--color-texto-light);  
+}
+
+
+
+
+.project-role {
+    margin: 8px 0;
+    line-height: 1.6; 
+    font-size: .9em;
+    color: var(--color-texto-primary);
+}
+
+.project-dates {
+    font-size: .8em;
+    color:var(--color-texto-secondary); 
+}
+
+.project-description {
+    margin: 10px 0;
+    color:var(--color-texto-light); 
+    line-height: 1.5;
+}
+
+.project-badges {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.badge {
+    background-color: var(--color-background-tertiary);
+    color: var(--color-texto-fifth);
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .project-header {
+        flex-direction: row;
+    }
+
+    .project-header .company-name {
+        font-size: 16px;
+    }
+
+    .project-role {
+        font-size: 14px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+  
+
+
+
+
+
+
+
+/* ============================ Estilos para la Sección de Certificación ============================ */
+/* General Styles */
+#certifications {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+}
+
+.certifications-header { 
+    grid-column: span 3; 
+    margin-bottom: 20px;
+}
+
+.certification {
+    position: relative;
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+    text-decoration: none;
+    color: inherit;
+    width: 100%; 
+}
+
+.icon-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.certification img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.redirect-icon-course {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: var(--color-texto-light); 
+    background-color: var(--color-background-tertiary);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.certification p {
+    color: var(--color-texto-light); 
+    margin-top: 20px;
+    text-align: center;
+}
+.certification:hover {
+    background-color: var(--color-background-glass);
+}
+
+.certification:hover i,
+.certification:hover p {
+    color: var(--color-texto-fifth);
+}
+
+/* Media query para tablet */
+@media (max-width: 1024px) {
+    .certifications-header { 
+        grid-column: span 2; 
+        margin-bottom: 20px;
+    }
+    #certifications {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+    .certifications-header { 
+        grid-column: span 1; 
+        margin-bottom: 20px;
+    }
+    #certifications {
+        grid-template-columns: 1fr; 
+    }
+
+    .certification {
+        margin-bottom: 20px; 
+    }
+
+    .redirect-icon-course {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+/* ============================ Estilos para Dispositivos Móviles ============================ */
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    
+    .container {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+        padding: 20px;
+    }
+
+    .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px 10px;
+        display: block;
+        box-sizing: border-box; 
+    }
+    .right-panel {        
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px 10px;
+        display: block;
+        box-sizing: border-box; 
+        margin: 0px;
+    }
+    
+
+    nav ul {
+        display: none;
+    }
+}
+
+
+
+section {
+    scroll-margin-top: 80px; 
+}
+
+/*
+.right-panel *{
+    border: 2px solid blue; 
+    box-sizing: border-box; 
+}
+
+.left-panel, .right-panel { 
+    border: 2px solid red; 
+ } 
+    
+ .sticky-menu{
+    border: 2px solid green; 
+ }
+
+
+
+
+/* === Estilo para el loader y fondo === */
+#loaderWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #090E19; /* Fondo sólido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté sobre todo */
+    opacity: 1; /* Inicialmente completamente visible */
+    transition: opacity 1s ease-out; /* Animación de opacidad */
+  }
+  
+  #loader {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor */
+    height: auto; /* Mantiene proporciones */
+    max-width: 150px; /* Tamaño máximo */
+    min-width: 50px; /* Tamaño mínimo */
+    opacity: 1; /* Inicialmente completamente visible */
+    transition: opacity 1s ease-out; /* Animación de opacidad */
+  }
+  
+  #content {
+    display: none; /* Ocultamos el contenido principal mientras carga */
+  }
+  
