@@ -3,12 +3,6 @@ function scrollToSection(sectionId) {
   document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
 
-
-
-
-
-
-
 //LOTTIE
 // Cargar la animación con el enlace proporcionado
 const animation = lottie.loadAnimation({
@@ -16,7 +10,7 @@ const animation = lottie.loadAnimation({
   renderer: 'svg',
   loop: false,  // No hacer loop
   autoplay: false,  // No iniciar automáticamente
-  path: 'https://lottie.host/3d5dbdb2-0c00-4022-acc5-6e5db1ed1cce/oaT4cHCPni.json',  // Usar el enlace proporcionado
+  path: 'media/lottie/switch.json',  // Ruta local al archivo JSON
 });
 
 // Estado de la animación
