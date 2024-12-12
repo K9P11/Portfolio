@@ -1,2 +1,0 @@
-# Portfolio
-Alfredo Ponce Portfolio
