@@ -8,14 +8,15 @@ function scrollToSection(sectionId) {
 
 
 
+
 //LOTTIE
-// Cargar la animación desde un archivo local
+// Cargar la animación con el enlace proporcionado
 const animation = lottie.loadAnimation({
   container: document.getElementById('canvas'),
   renderer: 'svg',
   loop: false,  // No hacer loop
   autoplay: false,  // No iniciar automáticamente
-  path: 'media/lottie/switch.json',  // Ruta local al archivo JSON
+  path: 'https://lottie.host/3d5dbdb2-0c00-4022-acc5-6e5db1ed1cce/oaT4cHCPni.json',  // Usar el enlace proporcionado
 });
 
 // Estado de la animación
@@ -52,6 +53,7 @@ animation.addEventListener('enterFrame', () => {
 
 // Función para actualizar el tema de manera gradual
 function updateTheme(progress) {
+  
   // Alternar entre temas gradualmente
   if (progress < 0.5) {
     document.body.classList.add('dark-theme');
@@ -61,7 +63,6 @@ function updateTheme(progress) {
     document.body.classList.remove('dark-theme');
   }
 }
-
 
 
 
