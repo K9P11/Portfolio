@@ -581,11 +581,12 @@ nav ul li a.active::after {
 .project-container:hover {
     background-color: var(--color-background-glass);
 }
-
+/*
 .project-container:hover img {
     color: var(--color-texto-fifth);
     font-size: 1.3em;
 }
+*/
 .project-container:hover .project-header span{ 
     color: var(--color-texto-fifth);
 }
