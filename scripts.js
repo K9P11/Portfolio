@@ -248,6 +248,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, fadeDuration); // Esperar a que termine la animación de desvanecimiento
   }
 });
-
-
-
