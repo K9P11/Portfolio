@@ -26,7 +26,7 @@
     --lcolor-background-tertiary: #E3F2FD; /**/
     --lcolor-background-light: #FFFFFF;
     --lcolor-background-dark: #D1D5DB;
-    --lcolor-background-glass: rgba(87, 94, 104, 0.04);
+    --lcolor-background-glass: rgb(245, 248, 255);
 
     --lcolor-texto-primary: #0F172A;
     --lcolor-texto-secondary: #334155;
