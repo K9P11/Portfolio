@@ -516,6 +516,10 @@ nav ul li a.active::after {
 
 
 /* ============================ Estilos para la Sección de Experiencia ============================ */
+.experience a{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 .abo-line, .experience-line, .certifications-line {
     width: 100%;
     height: 2px;
@@ -567,6 +571,29 @@ nav ul li a.active::after {
 .active-section .certifications-line {
     background-position: left bottom;
 }
+.seeAll{
+    display: block; 
+    border-radius: 8px;
+    padding: 20px 20px 0px 0px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; 
+    color: inherit; 
+    width: fit-content;
+}
+
+.seeAll:hover .project-header h1{ 
+    color: var(--color-texto-fifth);
+}
+.seeAll:hover .project-header svg{ 
+    fill: var(--color-texto-fifth);
+    padding-left: 5px;
+    padding-bottom: 5px;
+    width: 20px; 
+    height: 20px;
+}
+.seeAll h1{
+    text-transform: capitalize;
+}
 
 
 .project-container {
@@ -576,20 +603,21 @@ nav ul li a.active::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none; 
     color: inherit; 
-}
-
-.project-container:hover {
     background-color: var(--color-background-glass);
 }
 /*
+.project-container:hover {
+    background-color: var(--color-background-glass);
+}
 .project-container:hover img {
     color: var(--color-texto-fifth);
     font-size: 1.3em;
 }
-*/
+
 .project-container:hover .project-header span{ 
     color: var(--color-texto-fifth);
 }
+    */
 
 .project-container:hover .project-header svg{ 
     fill: var(--color-texto-fifth);
@@ -698,11 +726,13 @@ nav ul li a.active::after {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
+    padding-left: 20px;
 }
 
 .certifications-header { 
     grid-column: span 3; 
     margin-bottom: 20px;
+    margin-left: -20px;
 }
 
 .certification {
@@ -717,6 +747,7 @@ nav ul li a.active::after {
     text-decoration: none;
     color: inherit;
     width: 100%; 
+    background-color: var(--color-background-glass);
 }
 
 .icon-container {
@@ -749,9 +780,10 @@ nav ul li a.active::after {
     margin-top: 20px;
     text-align: center;
 }
+/*
 .certification:hover {
     background-color: var(--color-background-glass);
-}
+}*/
 
 .certification:hover i,
 .certification:hover p {
@@ -847,36 +879,36 @@ section {
  .sticky-menu{
     border: 2px solid green; 
  }
+*/
 
 
 
-
-/* === Estilo para el loader y fondo === */
+/* === Estilo para el loader y fondo ===  */
 #loaderWrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #090E19; /* Fondo sólido */
+    background-color: #090E19; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Asegura que esté sobre todo */
-    opacity: 1; /* Inicialmente completamente visible */
-    transition: opacity 1s ease-out; /* Animación de opacidad */
+    z-index: 1000; 
+    opacity: 1; 
+    transition: opacity 1s ease-out; 
   }
   
   #loader {
-    width: 50%; /* Ocupa el 50% del ancho del contenedor */
-    height: auto; /* Mantiene proporciones */
-    max-width: 150px; /* Tamaño máximo */
-    min-width: 50px; /* Tamaño mínimo */
-    opacity: 1; /* Inicialmente completamente visible */
-    transition: opacity 1s ease-out; /* Animación de opacidad */
+    width: 50%; 
+    height: auto; 
+    max-width: 150px; 
+    min-width: 50px; 
+    opacity: 1; 
+    transition: opacity 1s ease-out; 
   }
   
   #content {
-    display: none; /* Ocultamos el contenido principal mientras carga */
+    display: none; 
   }
   
