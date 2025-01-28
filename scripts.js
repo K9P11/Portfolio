@@ -248,3 +248,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }, fadeDuration); // Esperar a que termine la animación de desvanecimiento
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const certifications = document.querySelectorAll(".certification");
+  const viewMoreBtn = document.getElementById("view-more-btn");
+  const itemsPerPage = 6; // Número de certificaciones por bloque
+  let currentIndex = 0;
+
+  // Función para mostrar un bloque de certificaciones
+  function showNextBatch() {
+    const nextIndex = currentIndex + itemsPerPage;
+    certifications.forEach((cert, index) => {
+      // Mostrar solo las certificaciones que están dentro del rango
+      if (index >= currentIndex && index < nextIndex) {
+        cert.classList.remove("hidden"); // Mostrar
+      }
+    });
+    currentIndex = nextIndex;
+
+    // Si no hay más certificaciones, deshabilitar el botón
+    if (currentIndex >= certifications.length) {
+      viewMoreBtn.style.display = "none"; // Ocultar el botón
+    }
+  }
+
+  // Oculta todas las certificaciones inicialmente 
+  certifications.forEach((cert) => cert.classList.add("hidden"));
+
+  // Mostrar el primer bloque al cargar la página 
+  showNextBatch();
+
+  // Evento para el botón "View More"
+  viewMoreBtn.addEventListener("click", showNextBatch);
+});
