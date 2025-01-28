@@ -790,6 +790,32 @@ nav ul li a.active::after {
     color: var(--color-texto-fifth);
 }
 
+
+/* Botón "View More" */
+.view-more-btn {
+    margin: 20px auto;
+    display: block;
+    background-color: transparent;
+    color: var(--color-texto-tertiary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+    grid-column: span 3; /* Botón fuera de la estructura de las columnas */
+}
+
+.view-more-btn:hover {
+    color: var(--color-texto-fifth);
+}
+
+.view-more-btn:disabled {
+    display: none; /* Ocultar el botón si está deshabilitado */
+}
+
+
+
 /* Media query para tablet */
 @media (max-width: 1024px) {
     .certifications-header { 
@@ -819,6 +845,10 @@ nav ul li a.active::after {
         font-size: 18px;
     }
 }
+.hidden {
+    display: none;
+  }
+  
 
 
 
