@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script>
-    // 1. Lista de enlaces
     const redirects = {
       // Communications and Electronics Engineering
       "c1": "https://www.buholegal.com/cedula_info/13611096-C1/",
@@ -60,11 +59,10 @@
       "c26": "https://ixdf.org/members/alfredo-ponce/certificate/course/740f1e5d-59fe-4a10-b33f-52ef8320de3b"
     };
 
-    // 2. Extraer el nombre de la clave limpiando las diagonales
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const key = pathSegments[pathSegments.length - 1];
+    // Extrae la última palabra limpia de la URL ignorando /K9P11/ y diagonales finales
+    const cleanPath = window.location.pathname.replace(/\/$/, "");
+    const key = cleanPath.split("/").pop();
 
-    // 3. Redirección
     if (redirects[key]) {
       window.location.replace(redirects[key]);
     } else {
